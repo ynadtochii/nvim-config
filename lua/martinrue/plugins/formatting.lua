@@ -21,16 +21,33 @@ return {
 			},
 			format_on_save = {
 				lsp_fallback = true,
-				async = false,
-				timeout_ms = 1000,
+				async = true,
+				timeout_ms = 2000,
+			},
+			formatters = {
+				prettier = {
+					args = function(self, ctx)
+						if vim.endswith(ctx.filename, ".astro") then
+							return {
+								"--stdin-filepath",
+								"$FILENAME",
+								"--plugin",
+								"prettier-plugin-astro",
+								"--plugin",
+								"prettier-plugin-tailwindcss",
+							}
+						end
+						return { "--stdin-filepath", "$FILENAME", "--plugin", "prettier-plugin-tailwindcss" }
+					end,
+				},
 			},
 		})
 
 		vim.keymap.set({ "n", "v" }, "<leader>mp", function()
 			conform.format({
 				lsp_fallback = true,
-				async = false,
-				timeout_ms = 1000,
+				async = true,
+				timeout_ms = 2000,
 			})
 		end, { desc = "Format file or range (in visual mode)" })
 	end,

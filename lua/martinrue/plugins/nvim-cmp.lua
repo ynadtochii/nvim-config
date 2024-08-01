@@ -15,6 +15,8 @@ return {
 				completeopt = "menu,menuone,preview,noselect",
 			},
 			sources = cmp.config.sources({
+				{ name = "copilot" },
+				{ name = "luasnip" },
 				{ name = "nvim_lsp" },
 				{ name = "buffer" },
 				{ name = "path" },

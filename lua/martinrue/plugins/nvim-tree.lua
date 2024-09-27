@@ -31,6 +31,9 @@ return {
 					},
 				},
 			},
+			update_focused_file = {
+				enable = true,
+			},
 			filters = {
 				custom = { ".DS_Store" },
 			},
@@ -49,8 +52,8 @@ return {
 		)
 		vim.keymap.set("n", "<leader>ec", "<cmd>NvimTreeCollapse<CR>", { desc = "Collapse file explorer" })
 		vim.keymap.set("n", "<leader>er", "<cmd>NvimTreeRefresh<CR>", { desc = "Refresh file explorer" })
-		vim.keymap.set("n", "<leader><Right>", "<C-w><Right>", { desc = "Focus editor" })
-		vim.keymap.set("n", "<leader><Left>", "<C-w><Left>", { desc = "Focus tree" })
+		vim.keymap.set("n", "<S-l>", "<C-w><Right>", { desc = "Focus editor" })
+		vim.keymap.set("n", "<S-h>", "<C-w><Left>", { desc = "Focus tree" })
 		vim.keymap.set("n", "<leader><leader>", builtin.buffers, { desc = "[ ] Find existing buffers" })
 	end,
 }

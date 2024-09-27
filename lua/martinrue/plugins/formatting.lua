@@ -19,11 +19,14 @@ return {
 				markdown = { "prettier" },
 				lua = { "stylua" },
 			},
-			format_on_save = {
-				lsp_fallback = true,
+			format_after_save = {
 				async = true,
-				timeout_ms = 2000,
 			},
+			-- format_on_save = {
+			-- 	lsp_fallback = true,
+			-- 	async = true,
+			-- 	timeout_ms = 2000,
+			-- },
 			formatters = {
 				prettier = {
 					args = function(self, ctx)

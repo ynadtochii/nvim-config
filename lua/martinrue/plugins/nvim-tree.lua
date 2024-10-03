@@ -52,8 +52,10 @@ return {
 		)
 		vim.keymap.set("n", "<leader>ec", "<cmd>NvimTreeCollapse<CR>", { desc = "Collapse file explorer" })
 		vim.keymap.set("n", "<leader>er", "<cmd>NvimTreeRefresh<CR>", { desc = "Refresh file explorer" })
-		vim.keymap.set("n", "<S-l>", "<C-w><Right>", { desc = "Focus editor" })
-		vim.keymap.set("n", "<S-h>", "<C-w><Left>", { desc = "Focus tree" })
+		vim.keymap.set("n", "<C-l>", "<C-w><Right>", { desc = "Focus editor" })
+		vim.keymap.set("n", "<C-h>", "<C-w><Left>", { desc = "Focus tree" })
+		vim.keymap.set("n", "<C-j>", "<C-w><Down>", { desc = "Focus editor" })
+		vim.keymap.set("n", "<C-k>", "<C-w><Up>", { desc = "Focus tree" })
 		vim.keymap.set("n", "<leader><leader>", builtin.buffers, { desc = "[ ] Find existing buffers" })
 	end,
 }

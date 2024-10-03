@@ -35,8 +35,8 @@ vim.keymap.set("n", "<s-up>", "2k", { desc = "" })
 vim.keymap.set("n", "<s-down>", "2j", { desc = "" })
 vim.keymap.set("n", "<s-c-up>", "5k", { desc = "" })
 vim.keymap.set("n", "<s-c-down>", "5j", { desc = "" })
-vim.keymap.set("n", "<s-j>", "15k", { desc = "" })
-vim.keymap.set("n", "<s-k>", "15j", { desc = "" })
+vim.keymap.set("n", "<s-j>", "15j", { desc = "" })
+vim.keymap.set("n", "<s-k>", "15k", { desc = "" })
 
 -- Save file
 vim.keymap.set({ "i", "x", "n", "s" }, "<C-s>", "<cmd>w<cr><esc>", { desc = "Save file" })

@@ -10,6 +10,23 @@ return {
 		local mason_lspconfig = require("mason-lspconfig")
 		local cmp_nvim_lsp = require("cmp_nvim_lsp")
 
+		vim.diagnostic.config({
+			virtual_text = {
+				-- Show inline errors and warnings
+				source = "if_many", -- Show source if there are multiple diagnostics
+				prefix = "●", -- This can be any symbol you like
+				spacing = 4, -- Adjust spacing
+				severity = { min = vim.diagnostic.severity.ERROR },
+			},
+			float = {
+				source = "always", -- Always show the source of the diagnostic in the floating window
+			},
+			signs = true,
+			underline = true,
+			update_in_insert = false, -- Do not show diagnostics while typing
+			severity_sort = true,
+		})
+
 		vim.api.nvim_create_autocmd("LspAttach", {
 			group = vim.api.nvim_create_augroup("UserLspConfig", {}),
 			callback = function(ev)

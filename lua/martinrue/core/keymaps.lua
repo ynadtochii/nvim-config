@@ -8,13 +8,14 @@ vim.api.nvim_set_keymap(
 	"n",
 	"<leader>cp",
 	[[:lua vim.fn.setreg('+', vim.fn.expand('%:p'))<CR>]],
-	{ noremap = true, silent = true }
+	{ noremap = true, silent = true, desc = "Copy current file path" }
 )
 
 -- Search
 vim.keymap.set("n", "<leader>nh", ":nohl<CR>", { desc = "Clear search highlights" })
 
 -- Splits
+vim.keymap.set("n", "<leader>s", "", { desc = "+ Split" })
 vim.keymap.set("n", "<leader>sv", "<c-w>v", { desc = "Split window vertically" })
 vim.keymap.set("n", "<leader>sh", "<c-w>s", { desc = "Split window horizontally" })
 

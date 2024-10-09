@@ -19,16 +19,16 @@ return {
 			},
 		})
 
-		mason_lspconfig.setup({
-			ensure_installed = {
-				"tsserver",
-				"astro",
-				"html",
-				"cssls",
-				"gopls",
-				"eslint",
-			},
-		})
+		-- mason_lspconfig.setup({
+		-- 	ensure_installed = {
+		-- 		"tsserver",
+		-- 		"astro",
+		-- 		"html",
+		-- 		"cssls",
+		-- 		"gopls",
+		-- 		"eslint",
+		-- 	},
+		-- })
 
 		mason_tool_installer.setup({
 			ensure_installed = {

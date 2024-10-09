@@ -47,13 +47,12 @@ return {
 			virtual_text = lspDiagnosticsVisible,
 			underline = lspDiagnosticsVisible,
 		})
-
 		vim.keymap.set("n", "<leader>lx", function()
 			lspDiagnosticsVisible = not lspDiagnosticsVisible
 			vim.diagnostic.config({
 				virtual_text = lspDiagnosticsVisible,
 				underline = lspDiagnosticsVisible,
 			})
-		end)
+		end, { desc = "Toggle LSP diagnostics visibility" })
 	end,
 }

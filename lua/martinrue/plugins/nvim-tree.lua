@@ -43,6 +43,7 @@ return {
 		})
 
 		local builtin = require("telescope.builtin")
+		vim.keymap.set("n", "<leader>e", "", { desc = "+ File explorer" })
 		vim.keymap.set("n", "<leader>ee", "<cmd>NvimTreeToggle<CR>", { desc = "Toggle file explorer" })
 		vim.keymap.set(
 			"n",

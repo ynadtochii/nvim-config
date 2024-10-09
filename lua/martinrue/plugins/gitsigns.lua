@@ -44,7 +44,7 @@ return {
 				enable = false,
 			},
 		})
-		vim.keymap.set("n", "<leader>hs", gitsigns.stage_hunk, { desc = "Stage current hunk" })
+		vim.keymap.set("n", "<leader>h", "", { desc = "+ Hunk" })
 		vim.keymap.set("n", "<leader>hr", gitsigns.reset_hunk, { desc = "Reset current hunk" })
 		vim.keymap.set("v", "<leader>hs", function()
 			gitsigns.stage_hunk({ vim.fn.line("."), vim.fn.line("v") })

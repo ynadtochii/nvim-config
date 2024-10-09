@@ -30,6 +30,7 @@ return {
 		-- --no-ignore "foo bar	search for „foo bar“ ignoring ignores
 		-- "foo" --iglob **/test/**	search for „foo“ in any „test“ path
 
+		vim.keymap.set("n", "<leader>f", "", { desc = "+ Fuzzy find" })
 		vim.keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<CR>", { desc = "Fuzzy find files in cwd" })
 		vim.keymap.set("n", "<leader>fr", "<cmd>Telescope oldfiles<CR>", { desc = "Fuzzy find recent files" })
 		vim.keymap.set("n", "<leader>fs", "<cmd>Telescope live_grep<CR>", { desc = "Find string in cwd" })

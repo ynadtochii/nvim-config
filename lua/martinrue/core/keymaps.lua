@@ -11,6 +11,18 @@ vim.api.nvim_set_keymap(
 	{ noremap = true, silent = true, desc = "Copy current file path" }
 )
 
+vim.api.nvim_set_keymap("n", "<leader>f", "<cmd>lua vim.lsp.buf.format()<CR>", { noremap = true, silent = true })
+vim.keymap.set(
+	"n",
+	"<leader>r",
+	":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>",
+	{ desc = "Find and replace word under cursor" }
+)
+
+vim.keymap.set("n", "<leader>y", '"*yy', { desc = "Yank line to system clipboard" })
+
+vim.keymap.set("v", "<leader>y", '"*y', { desc = "Yank selection to system clipboard" })
+
 -- Search
 vim.keymap.set("n", "<leader>nh", ":nohl<CR>", { desc = "Clear search highlights" })
 

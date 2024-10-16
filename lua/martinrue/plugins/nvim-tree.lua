@@ -12,10 +12,14 @@ return {
 				width = 35,
 			},
 			renderer = {
+				-- highlight_git = true,
 				indent_markers = {
 					enable = true,
 				},
 				icons = {
+					show = {
+						git = true, -- Show git icons
+					},
 					glyphs = {
 						folder = {
 							arrow_closed = "→",
@@ -38,7 +42,7 @@ return {
 				custom = { ".DS_Store" },
 			},
 			git = {
-				enable = false,
+				enable = true,
 			},
 		})
 

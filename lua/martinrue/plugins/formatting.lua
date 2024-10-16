@@ -27,20 +27,35 @@ return {
 			-- 	async = true,
 			-- 	timeout_ms = 2000,
 			-- },
+			-- formatters = {
+			-- 	prettier = {
+			-- 		args = function(self, ctx)
+			-- 			if vim.endswith(ctx.filename, ".astro") then
+			-- 				return {
+			-- 					"--stdin-filepath",
+			-- 					"$FILENAME",
+			-- 					"--plugin",
+			-- 					"prettier-plugin-astro",
+			-- 					"--plugin",
+			-- 					"prettier-plugin-tailwindcss",
+			-- 				}
+			-- 			end
+			-- 			return {
+			-- 				"--stdin-filepath",
+			-- 				"$FILENAME",
+			-- 				"--plugin",
+			-- 				"prettier-plugin-tailwindcss"
+			-- 			}
+			-- 		end,
+			-- 	},
+			-- },
 			formatters = {
 				prettier = {
 					args = function(self, ctx)
-						if vim.endswith(ctx.filename, ".astro") then
-							return {
-								"--stdin-filepath",
-								"$FILENAME",
-								"--plugin",
-								"prettier-plugin-astro",
-								"--plugin",
-								"prettier-plugin-tailwindcss",
-							}
-						end
-						return { "--stdin-filepath", "$FILENAME", "--plugin", "prettier-plugin-tailwindcss" }
+						return {
+							"--stdin-filepath",
+							"$FILENAME",
+						}
 					end,
 				},
 			},

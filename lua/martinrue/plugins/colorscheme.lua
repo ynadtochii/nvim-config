@@ -38,7 +38,7 @@ return {
 				-- Available styles: 'dark', 'light'.
 				theme = "dark",
 				-- Blending the cursorline bg with the buffer bg.
-				blend = 0.85,
+				blend = 1,
 			},
 			noice = {
 				-- Available styles: `classic`, `flat`.

@@ -31,11 +31,17 @@ opt.laststatus = 3
 -- search
 opt.ignorecase = true
 opt.smartcase = true
+-- opt.hlsearch = true
 
 -- colours
 opt.termguicolors = true
 opt.background = "dark"
 opt.signcolumn = "yes"
+
+-- opt.guifont = "Mononoki:h16:b"
+--
+-- opt.guifont = "Mononoki Nerd Font Mono:h16:6"
+vim.opt.guifont = "Mononoki Nerd Font Mono:h16"
 
 -- backspace
 opt.backspace = "indent,eol,start"

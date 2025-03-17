@@ -69,7 +69,7 @@ return {
 				vim.keymap.set("n", "<S-i>", vim.lsp.buf.hover, opts)
 
 				opts.desc = "Restart LSP"
-				vim.keymap.set("n", "<leader>rs", ":lsprestart<cr>", opts)
+				vim.keymap.set("n", "<leader>rs", vim.cmd.LspRestart, opts)
 			end,
 		})
 
@@ -87,6 +87,27 @@ return {
 					capabilities = capabilities,
 				})
 			end,
+			["ltex"] = function()
+				lspconfig.ltex.setup({
+					capabilities = capabilities,
+					settings = {
+						ltex = {
+							language = "en-US",
+							additionalRules = {
+								enablePickyRules = true,
+								motherTongue = "en",
+							},
+						},
+					},
+				})
+			end,
 		})
+		-- mason_lspconfig.setup_handlers({
+		-- 	function(server_name)
+		-- 		lspconfig[server_name].setup({
+		-- 			capabilities = capabilities,
+		-- 		})
+		-- 	end,
+		-- })
 	end,
 }

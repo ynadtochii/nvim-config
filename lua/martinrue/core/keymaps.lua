@@ -3,6 +3,22 @@ vim.g.mapleader = " "
 -- Insert UUID
 vim.keymap.set("i", "<c-u>", "<c-r>=trim(system('uuidgen | tr A-Z a-z'))<cr>", { desc = "Insert UUID at cursor" })
 
+-- Function to insert console.log(''); with cursor inside quotes
+local function insert_console_log()
+	local log_statement = "console.log('');"
+	vim.api.nvim_put({ log_statement }, "l", false, false) -- Insert on the line below
+	vim.cmd("normal! $2h i") -- Move to end of line, go back 2 characters, enter insert mode
+end
+
+-- Keymaps for Insert and Normal Modes
+-- vim.keymap.set("i", "<leader>cl", function()
+-- 	insert_console_log()
+-- end, { noremap = true, silent = true, desc = "Insert console.log() in insert mode" })
+
+vim.keymap.set("n", "<leader>cl", function()
+	insert_console_log()
+end, { noremap = true, silent = true, desc = "Insert console.log() in normal mode" })
+
 -- Copy current file path
 vim.api.nvim_set_keymap(
 	"n",
@@ -46,10 +62,10 @@ vim.keymap.set("v", ">", ">gv")
 -- Multi line scrolling
 vim.keymap.set("n", "<s-up>", "2k", { desc = "" })
 vim.keymap.set("n", "<s-down>", "2j", { desc = "" })
-vim.keymap.set("n", "<s-c-up>", "5k", { desc = "" })
-vim.keymap.set("n", "<s-c-down>", "5j", { desc = "" })
-vim.keymap.set("n", "<s-j>", "15j", { desc = "" })
-vim.keymap.set("n", "<s-k>", "15k", { desc = "" })
+vim.keymap.set("n", "<s-c-up>", "10k", { desc = "" })
+vim.keymap.set("n", "<s-c-down>", "10j", { desc = "" })
+vim.keymap.set("n", "<s-j>", "30j", { desc = "" })
+vim.keymap.set("n", "<s-k>", "30k", { desc = "" })
 
 -- Save file
 vim.keymap.set({ "i", "x", "n", "s" }, "<C-s>", "<cmd>w<cr><esc>", { desc = "Save file" })

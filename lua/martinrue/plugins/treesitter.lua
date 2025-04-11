@@ -54,5 +54,14 @@ return {
 				underline = lspDiagnosticsVisible,
 			})
 		end, { desc = "Toggle LSP diagnostics visibility" })
+
+		-- Enable spell checking for markdown, text, gitcommit
+		vim.api.nvim_create_autocmd("FileType", {
+			pattern = { "markdown", "gitcommit", "text" },
+			callback = function()
+				vim.opt_local.spell = true
+				vim.opt_local.spelllang = { "en_us" }
+			end,
+		})
 	end,
 }

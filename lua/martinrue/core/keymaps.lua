@@ -64,11 +64,16 @@ vim.keymap.set("n", "<s-up>", "2k", { desc = "" })
 vim.keymap.set("n", "<s-down>", "2j", { desc = "" })
 vim.keymap.set("n", "<s-c-up>", "10k", { desc = "" })
 vim.keymap.set("n", "<s-c-down>", "10j", { desc = "" })
-vim.keymap.set("n", "<s-j>", "30j", { desc = "" })
-vim.keymap.set("n", "<s-k>", "30k", { desc = "" })
+vim.keymap.set("n", "<s-j>", "30jzz", { desc = "" })
+vim.keymap.set("n", "<s-k>", "30kzz", { desc = "" })
+vim.keymap.set("n", "<s-h>", "30h", { desc = "" })
+vim.keymap.set("n", "<s-l>", "30l", { desc = "" })
 
 -- Save file
 vim.keymap.set({ "i", "x", "n", "s" }, "<C-s>", "<cmd>w<cr><esc>", { desc = "Save file" })
 
 -- Quit
 vim.keymap.set("n", "<leader>qq", "<cmd>qa<cr>", { desc = "Quit all" })
+
+-- vim.keymap.set("n", "j", "jzz", { noremap = true, silent = true })
+-- vim.keymap.set("n", "k", "kzz", { noremap = true, silent = true })

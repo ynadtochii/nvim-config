@@ -16,4 +16,11 @@ return {
 	keys = {
 		{ "<leader>lg", "<cmd>LazyGit<cr>", desc = "LazyGit" },
 	},
+	config = function()
+		-- Set LazyGit configuration
+		vim.g.lazygit_config_file_path = vim.fn.expand("~/.config/lazygit/config.yml")
+		vim.g.lazygit_config = {
+			quitOnTopLevelReturn = true,
+		}
+	end,
 }

@@ -38,10 +38,8 @@ opt.termguicolors = true
 opt.background = "dark"
 opt.signcolumn = "yes"
 
--- opt.guifont = "Mononoki:h16:b"
---
--- opt.guifont = "Mononoki Nerd Font Mono:h16:6"
-vim.opt.guifont = "Mononoki Nerd Font Mono:h16"
+-- font
+opt.guifont = "Cascadia Code:h12"
 
 -- backspace
 opt.backspace = "indent,eol,start"

@@ -1,7 +1,10 @@
 return {
-	"adelarsq/image_preview.nvim",
-	event = "VeryLazy",
-	config = function()
-		require("image_preview").setup()
-	end,
+	"folke/snacks.nvim",
+	opts = {
+		image = {
+			-- your image configuration comes here
+			-- or leave it empty to use the default settings
+			-- refer to the configuration section below
+		},
+	},
 }

@@ -38,11 +38,11 @@ return {
 				opts.desc = "Go to declaration"
 				vim.keymap.set("n", "gD", vim.lsp.buf.declaration, opts)
 
-				opts.desc = "Show LSP definitions"
-				vim.keymap.set("n", "gd", "<cmd>Telescope lsp_definitions<CR>", opts)
-
-				opts.desc = "Go to definition with Enter"
-				vim.keymap.set("n", "<CR>", vim.lsp.buf.definition, opts)
+				-- opts.desc = "Show LSP definitions"
+				-- vim.keymap.set("n", "gd", "<cmd>Telescope lsp_definitions<CR>", opts)
+				--
+				-- opts.desc = "Go to definition with Enter"
+				-- vim.keymap.set("n", "<CR>", vim.lsp.buf.definition, opts)
 
 				opts.desc = "Show LSP implementations"
 				vim.keymap.set("n", "gi", "<cmd>Telescope lsp_implementations<CR>", opts)

@@ -61,6 +61,6 @@ return {
 		vim.keymap.set("n", "<C-h>", "<C-w><Left>", { desc = "Focus tree" })
 		vim.keymap.set("n", "<C-j>", "<C-w><Down>", { desc = "Focus editor" })
 		vim.keymap.set("n", "<C-k>", "<C-w><Up>", { desc = "Focus tree" })
-		vim.keymap.set("n", "<leader><leader>", builtin.buffers, { desc = "[ ] Find existing buffers" })
+		-- vim.keymap.set("n", "<leader><leader>", builtin.buffers, { desc = "[ ] Find existing buffers" })
 	end,
 }

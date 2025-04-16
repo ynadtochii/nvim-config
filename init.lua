@@ -1,2 +1,2 @@
-require("martinrue.core")
-require("martinrue.lazy")
+require("yev.core")
+require("yev.lazy")

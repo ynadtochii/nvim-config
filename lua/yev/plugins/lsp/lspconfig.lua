@@ -12,11 +12,19 @@ return {
 
     -- Set up LSP diagnostics with simple icons and settings
     vim.diagnostic.config({
-      virtual_text = true,
+      virtual_text = {
+        -- Only show errors inline, not warnings or info
+        severity = { min = vim.diagnostic.severity.ERROR },
+      },
       signs = true,
       underline = true,
       update_in_insert = false,
       severity_sort = true,
+      float = {
+        -- Show all diagnostic information in the floating window
+        source = "always",
+        border = "rounded",
+      },
     })
 
     -- Set up keymaps for LSP actions
@@ -36,8 +44,11 @@ return {
         vim.keymap.set("n", "<leader>d", vim.diagnostic.open_float, opts)
         vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, opts)
         vim.keymap.set("n", "]d", vim.diagnostic.goto_next, opts)
+        
+        -- Show documentation for what is under cursor
+        vim.keymap.set("n", "<S-i>", vim.lsp.buf.hover, opts)
 
-          -- Go to Definition on Enter
+        -- Go to Definition on Enter
         vim.keymap.set("n", "<CR>", vim.lsp.buf.definition, opts)
       end,
     })

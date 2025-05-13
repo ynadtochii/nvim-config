@@ -50,6 +50,17 @@ return {
 
         -- Go to Definition on Enter
         vim.keymap.set("n", "<CR>", vim.lsp.buf.definition, opts)
+        
+        -- Restart LSP
+        vim.keymap.set("n", "<leader>rs", vim.cmd.LspRestart, opts)
+        
+        -- Source organization commands (import all, remove unused)
+        vim.keymap.set("n", "<leader>oi", function()
+          vim.lsp.buf.code_action({
+            context = { only = { "source.organizeImports" } },
+            apply = true,
+          })
+        end, { buffer = ev.buf, desc = "Organize Imports" })
       end,
     })
 

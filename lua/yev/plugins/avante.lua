@@ -4,13 +4,23 @@ return {
 	lazy = false,
 	version = false, -- set this if you want to always pull the latest change
 	opts = {
-		provider = "claude",
-		claude = {
-			endpoint = "https://api.anthropic.com",
-      -- model = "claude-3-7-sonnet-20250219",
-      model = "claude-3-5-sonnet-20241022",
-			temperature = 0,
-			max_tokens = 4096,
+		providers = {
+			tavily = {
+				api_key = os.getenv("TAVILY_API_KEY"),
+				search_depth = "advanced", -- basic or advanced
+				include_domains = {},  -- optional: list of domains to include
+				exclude_domains = {},  -- optional: list of domains to exclude
+				max_results = 5,      -- number of results to return
+			},
+			claude = {
+				endpoint = "https://api.anthropic.com",
+				-- model = "claude-3-7-sonnet-20250219",
+				model = "claude-3-5-sonnet-20241022",
+				extra_request_body = {
+					temperature = 0,
+					max_tokens = 4096,
+				},
+			},
 		},
 		behaviour = {
 			auto_suggestions = false,
